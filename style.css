@@ -1,0 +1,288 @@
+:root {
+    --background-color: #0F172A;
+    --cards-color: #1E293B;
+    --primary-text-color: white;
+    --button-color: #3B82F6;
+    --hover-color: #172f4d;
+    --accent-color: #06B6D4;
+    --borders-color: #334155;
+    --nav-color: #1E293B;
+    --card-padding: 0.5rem;
+    --card-transition-duration: 0.2s;
+    --card-spacing: 0.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: var(--accent-color);
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin: 2rem 0 1rem;
+    color: var(--accent-color);
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0rem;
+    color: var(--accent-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: var(--card-spacing);
+    padding: 0.5rem 0;
+}
+
+button {
+    background-color: var(--button-color);
+    color: var(--primary-text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+nav {
+    padding: 1rem 0;
+    background-color: var(--nav-color);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--borders-color);
+}
+
+.nav-list {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-list>li {
+    height: 50px;
+}
+
+/* Logo styles */
+.nav-list>li:first-child>a {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+.nav-list>li:first-child {
+    margin-right: auto;
+}
+
+.nav-list>li>a {
+    height: 100%;
+    padding: 0 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-text-color);
+    border-radius: 10px;
+}
+
+.nav-list>li>a:hover {
+    background-color: var(--hover-color);
+    border-radius: 10px;
+}
+
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--card-spacing);
+}
+
+.stats-item {
+    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    text-align: center;
+    background-color: var(--cards-color);
+    border: 1px solid var(--borders-color);
+    border-radius: 10px;
+    padding: var(--card-padding);
+}
+
+.stats-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.highlight {
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.subject-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--card-spacing);
+}
+
+.subject-item {
+    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    background-color: var(--cards-color);
+    border: 1px solid var(--borders-color);
+    border-radius: 10px;
+    padding: var(--card-padding);
+}
+
+.subject-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.subject-item-sublist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.why-choose-me p{
+    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    background-color: var(--cards-color);
+    border: 1px solid var(--borders-color);
+    border-radius: 10px;
+    padding: var(--card-padding);
+}
+
+.why-choose-me p:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--card-spacing);
+}
+
+.experience-item {
+    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    background-color: var(--cards-color);
+    border: 1px solid var(--borders-color);
+    border-radius: 10px;
+    padding: var(--card-padding);
+}
+
+.experience-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--card-spacing);
+}
+
+.testimonials-item {
+    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    background-color: var(--cards-color);
+    border: 1px solid var(--borders-color);
+    border-radius: 10px;
+    padding: var(--card-padding);
+}
+
+.testimonials-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--card-spacing);
+}
+
+.faq-item {
+    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    background-color: var(--cards-color);
+    border: 1px solid var(--borders-color);
+    border-radius: 10px;
+    padding: var(--card-padding);
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--card-spacing);
+}
+
+.pricing-item {
+    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    background-color: var(--cards-color);
+    border: 1px solid var(--borders-color);
+    border-radius: 10px;
+    padding: var(--card-padding);
+}
+
+.pricing-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: var(--nav-color);
+    border-top: 1px solid var(--borders-color);
+    padding: 0.5rem 0;
+    text-align: center;
+}
