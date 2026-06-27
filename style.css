@@ -108,6 +108,12 @@ section {
     box-shadow: 0 1px 2px var(--shadow-color);
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 nav {
     padding: 1rem 20px;
     background-color: var(--nav-color);
@@ -115,9 +121,6 @@ nav {
     border-bottom: 1px solid var(--borders-color);
     max-width: 1800px;
     margin: 0 auto;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 .nav-list {
@@ -396,23 +399,49 @@ nav {
 footer {
     background-color: var(--nav-color);
     border-top: 1px solid var(--borders-color);
-    padding: 0.5rem 0;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    padding: 2rem 0;
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
-footer p {
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 0 0.5rem;
+}
+
+.footer-section {
+    text-align: left;
+    margin: 0 1rem;
+}
+
+.footer-section h3 {
+    color: var(--warm-accent-color);
+    font-size: 1.25rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    flex: 1;
 }
 
-footer a {
-    color: var(--text-color);
+.footer-section a {
+    color: var(--primary-text-color);
     text-decoration: none;
+    transition: color var(--card-transition-duration) ease;
 }
 
-footer a:hover {
+.footer-section a:hover {
+    color: var(--warm-accent-color);
     text-decoration: underline;
+}
+
+/* Mobile footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
