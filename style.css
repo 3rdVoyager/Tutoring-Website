@@ -76,7 +76,7 @@ p {
 }
 
 main {
-    max-width: 1800px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -217,7 +217,39 @@ nav {
     transform-origin: left;
 }
 
-/* Mobile - cleaner wrapping */
+/* Hamburger Button - Hidden on Desktop */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0.5rem;
+    background-color: var(--button-color);
+    border: var(--card-border-width) solid var(--button-color);
+    border-radius: 10px;
+}
+
+.hamburger:hover {
+    background-color: var(--cards-color);
+    border: var(--card-border-width) solid var(--borders-color);
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--primary-text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Navigation */
 @media (max-width: 768px) {
     .nav-list {
         justify-content: center;
@@ -232,6 +264,80 @@ nav {
     .nav-list>li:first-child {
         order: -1;
         justify-content: center;
+    }
+
+    nav {
+        position: relative;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+        border-bottom: none;
+        overflow: visible;
+    }
+
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1001;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--nav-color);
+        flex-direction: column;
+        padding-top: 60px;
+        transition: left 0.3s ease;
+        z-index: 1001;
+        margin: 0;
+    }
+
+    .nav-list>li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .nav-list>li>a {
+        display: block;
+        padding: 0.75rem;
+        height: auto;
+        margin: 0.25rem 0;
+
+    }
+
+    /* Logo stays at top when menu opens */
+    .nav-list>li:first-child {
+        position: absolute;
+        top: 0.5rem;
+        left: 0;
+        width: 100%;
+        margin-right: 0;
+        z-index: 1001;
+    }
+
+    /* Show menu when hamburger is checked */
+    .menu-toggle:checked~.nav-list {
+        left: 0;
+    }
+
+    /* Animate hamburger to X */
+    .menu-toggle:checked~.hamburger span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle:checked~.hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked~.hamburger span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }
 
