@@ -9,6 +9,7 @@
     --nav-color: #1E293B;
     --warm-accent-color: #F59E0B;
     --warm-light-color: #FDE68A;
+    --border-hover-color: #FFF;
     --card-padding: 1rem;
     --card-transition-duration: 0.2s;
     --card-spacing: 1rem;
@@ -59,12 +60,19 @@ p {
 
 .highlight {
     font-weight: bold;
-    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
     color: var(--accent-color);
     font-weight: bold;
     display: block;
     text-align: center;
     margin-bottom: 0rem;
+    transform: scale(1);
+    transform-origin: center;
+    transition: all 0.5s ease;
+}
+
+.stats-item:hover .highlight {
+    transform: scale(1.2);
 }
 
 main {
@@ -234,16 +242,12 @@ nav {
 }
 
 .stats-item {
-    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    transition: all var(--card-transition-duration);
     text-align: center;
     background-color: var(--cards-color);
     border: var(--card-border-width) solid var(--borders-color);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
-}
-
-#sat-stat {
-    border: 3px solid var(--warm-accent-color);
 }
 
 #sat-stat strong {
@@ -253,7 +257,7 @@ nav {
 .stats-item:hover {
     transform: translateY(var(--hover-offset));
     box-shadow: 0 5px 15px var(--shadow-color);
-    border-color: var(--warm-accent-color);
+    border-color: var(--border-hover-color);
 }
 
 .subject-list {
@@ -264,17 +268,21 @@ nav {
 }
 
 .subject-item {
-    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    transition: all var(--card-transition-duration);
     background-color: var(--cards-color);
     border: var(--card-border-width) solid var(--borders-color);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
 }
 
+.subject-item h3 {
+    color: var(--text-color);
+}
+
 .subject-item:hover {
     transform: translateY(var(--hover-offset));
     box-shadow: 0 5px 15px var(--shadow-color);
-    border-color: var(--warm-accent-color);
+    border-color: var(--border-hover-color);
 }
 
 .subject-item-sublist {
@@ -283,8 +291,32 @@ nav {
     margin: 0;
 }
 
+#math {
+    background-color: #0d2b6a;
+}
+
+#science {
+    background-color: #025e3f;
+}
+
+#english {
+    background-color: #76500d;
+}
+
+#computer-science {
+    background-color: #341971;
+}
+
+#testprep {
+    background-color: #5b2222;
+}
+
+#study-skills {
+    background-color: #08505c;
+}
+
 #why-choose-me p {
-    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    transition: all var(--card-transition-duration);
     background-color: var(--cards-color);
     border: var(--card-border-width) solid var(--borders-color);
     border-radius: var(--card-border-radius);
@@ -294,7 +326,7 @@ nav {
 #why-choose-me p:hover {
     transform: translateY(var(--hover-offset));
     box-shadow: 0 5px 15px var(--shadow-color);
-    border-color: var(--warm-accent-color);
+    border-color: var(--border-hover-color);
 }
 
 .experience-list {
@@ -307,7 +339,7 @@ nav {
 }
 
 .experience-item {
-    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    transition: all var(--card-transition-duration);
     background-color: var(--cards-color);
     border: var(--card-border-width) solid var(--borders-color);
     border-radius: var(--card-border-radius);
@@ -317,7 +349,7 @@ nav {
 .experience-item:hover {
     transform: translateY(var(--hover-offset));
     box-shadow: 0 5px 15px var(--shadow-color);
-    border-color: var(--warm-accent-color);
+    border-color: var(--border-hover-color);
 }
 
 .testimonials-list {
@@ -330,7 +362,7 @@ nav {
 }
 
 .testimonials-item {
-    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    transition: all var(--card-transition-duration);
     background-color: var(--cards-color);
     border: var(--card-border-width) solid var(--borders-color);
     border-radius: var(--card-border-radius);
@@ -340,7 +372,7 @@ nav {
 .testimonials-item:hover {
     transform: translateY(var(--hover-offset));
     box-shadow: 0 5px 15px var(--shadow-color);
-    border-color: var(--warm-accent-color);
+    border-color: var(--border-hover-color);
 }
 
 .faq-list {
@@ -353,7 +385,7 @@ nav {
 }
 
 .faq-item {
-    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    transition: all var(--card-transition-duration);
     background-color: var(--cards-color);
     border: var(--card-border-width) solid var(--borders-color);
     border-radius: var(--card-border-radius);
@@ -363,7 +395,7 @@ nav {
 .faq-item:hover {
     transform: translateY(var(--hover-offset));
     box-shadow: 0 5px 15px var(--shadow-color);
-    border-color: var(--warm-accent-color);
+    border-color: var(--border-hover-color);
 }
 
 .pricing-list {
@@ -376,7 +408,7 @@ nav {
 }
 
 .pricing-item {
-    transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
+    transition: all var(--card-transition-duration);
     background-color: var(--cards-color);
     border: var(--card-border-width) solid var(--borders-color);
     border-radius: var(--card-border-radius);
@@ -386,7 +418,7 @@ nav {
 .pricing-item:hover {
     transform: translateY(var(--hover-offset));
     box-shadow: 0 5px 15px var(--shadow-color);
-    border-color: var(--warm-accent-color);
+    border-color: var(--border-hover-color);
 }
 
 #get-started p {
@@ -394,6 +426,13 @@ nav {
     border: var(--card-border-width) solid var(--borders-color);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
+    transition: all var(--card-transition-duration);
+}
+
+#get-started p:hover {
+    transform: translateY(var(--hover-offset));
+    box-shadow: 0 5px 15px var(--shadow-color);
+    border-color: var(--border-hover-color);
 }
 
 footer {
@@ -434,7 +473,7 @@ footer {
 }
 
 .footer-section a:hover {
-    color: var(--warm-accent-color);
+    color: var(--accent-color);
     text-decoration: underline;
 }
 
