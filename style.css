@@ -10,6 +10,7 @@
     --card-padding: 0.5rem;
     --card-transition-duration: 0.2s;
     --card-spacing: 0.5rem;
+    --card-border-radius: 10px;
 }
 
 * {
@@ -24,33 +25,44 @@ body {
     background-color: var(--background-color);
     color: var(--primary-text-color);
     line-height: 1.6;
+    font-size: 16px;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
     margin-bottom: 1rem;
     line-height: 1.2;
     color: var(--accent-color);
 }
 
 h2 {
-    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
     margin: 2rem 0 1rem;
     color: var(--accent-color);
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
     margin-bottom: 0rem;
     color: var(--accent-color);
 }
 
 p {
     margin-bottom: 1rem;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+.highlight {
+    font-weight: bold;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    color: var(--accent-color);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 main {
-    max-width: 1200px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -60,18 +72,23 @@ section {
     padding: 0.5rem 0;
 }
 
-button {
+.button {
     background-color: var(--button-color);
     color: var(--primary-text-color);
     border: none;
     padding: 0.5rem 1rem;
+    text-decoration: none;
+    margin: var(--card-spacing) auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    border-radius: var(--card-border-radius);
+    cursor: hand;
+    transition: background-color var(--card-transition-duration);
 }
 
-button:hover {
+.button:hover {
     background-color: var(--hover-color);
 }
 
@@ -113,12 +130,11 @@ nav {
     align-items: center;
     justify-content: center;
     color: var(--primary-text-color);
-    border-radius: 10px;
+    border-radius: var(--card-border-radius);
 }
 
 .nav-list>li>a:hover {
     background-color: var(--hover-color);
-    border-radius: 10px;
 }
 
 
@@ -133,22 +149,13 @@ nav {
     text-align: center;
     background-color: var(--cards-color);
     border: 1px solid var(--borders-color);
-    border-radius: 10px;
+    border-radius: var(--card-border-radius);
     padding: var(--card-padding);
 }
 
 .stats-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.highlight {
-    font-weight: bold;
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
 }
 
 .subject-list {
@@ -164,7 +171,7 @@ nav {
     transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
     background-color: var(--cards-color);
     border: 1px solid var(--borders-color);
-    border-radius: 10px;
+    border-radius: var(--card-border-radius);
     padding: var(--card-padding);
 }
 
@@ -183,7 +190,7 @@ nav {
     transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
     background-color: var(--cards-color);
     border: 1px solid var(--borders-color);
-    border-radius: 10px;
+    border-radius: var(--card-border-radius);
     padding: var(--card-padding);
 }
 
@@ -205,7 +212,7 @@ nav {
     transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
     background-color: var(--cards-color);
     border: 1px solid var(--borders-color);
-    border-radius: 10px;
+    border-radius: var(--card-border-radius);
     padding: var(--card-padding);
 }
 
@@ -227,7 +234,7 @@ nav {
     transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
     background-color: var(--cards-color);
     border: 1px solid var(--borders-color);
-    border-radius: 10px;
+    border-radius: var(--card-border-radius);
     padding: var(--card-padding);
 }
 
@@ -249,7 +256,7 @@ nav {
     transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
     background-color: var(--cards-color);
     border: 1px solid var(--borders-color);
-    border-radius: 10px;
+    border-radius: var(--card-border-radius);
     padding: var(--card-padding);
 }
 
@@ -271,7 +278,7 @@ nav {
     transition: transform var(--card-transition-duration), box-shadow var(--card-transition-duration);
     background-color: var(--cards-color);
     border: 1px solid var(--borders-color);
-    border-radius: 10px;
+    border-radius: var(--card-border-radius);
     padding: var(--card-padding);
 }
 
