@@ -7,9 +7,9 @@
     --accent-color: #06B6D4;
     --borders-color: #334155;
     --nav-color: #1E293B;
-    --card-padding: 0.5rem;
+    --card-padding: 1rem;
     --card-transition-duration: 0.2s;
-    --card-spacing: 0.5rem;
+    --card-spacing: 1rem;
     --card-border-radius: 10px;
 }
 
@@ -37,7 +37,7 @@ h1 {
 
 h2 {
     font-size: clamp(1.5rem, 3.5vw, 2rem);
-    margin: 2rem 0 1rem;
+    margin-bottom: 1rem;
     color: var(--accent-color);
 }
 
@@ -58,7 +58,8 @@ p {
     color: var(--accent-color);
     font-weight: bold;
     display: block;
-    margin-bottom: 0.5rem;
+    text-align: center;
+    margin-bottom: 0rem;
 }
 
 main {
@@ -69,7 +70,7 @@ main {
 
 section {
     margin-bottom: var(--card-spacing);
-    padding: 0.5rem 0;
+    padding: var(--card-padding) 0;
 }
 
 .button {
@@ -108,7 +109,7 @@ nav {
 }
 
 .nav-list>li {
-    height: 50px;
+    height: 40px;
 }
 
 /* Logo styles */
@@ -137,10 +138,21 @@ nav {
     background-color: var(--hover-color);
 }
 
+@media (max-width: 768px) {
+    .nav-list {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-list>li {
+        height: 20px;
+    }
+
+}
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--card-spacing);
 }
 
@@ -160,10 +172,8 @@ nav {
 
 .subject-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--card-spacing);
 }
 
@@ -204,7 +214,7 @@ nav {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--card-spacing);
 }
 
@@ -226,7 +236,7 @@ nav {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--card-spacing);
 }
 
@@ -248,7 +258,7 @@ nav {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--card-spacing);
 }
 
@@ -270,7 +280,7 @@ nav {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--card-spacing);
 }
 
